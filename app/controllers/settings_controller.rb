@@ -47,7 +47,7 @@ class SettingsController < ApplicationController
   def update_row
     @setting = Setting.find(params.fetch("id_to_modify"))
 
-    @setting.owner_id = params.fetch("owner_id")
+    
     @setting.upper_digit_limit = params.fetch("upper_digit_limit")
     @setting.lower_digit_limit = params.fetch("lower_digit_limit")
     @setting.multiplication = params.fetch("multiplication")
