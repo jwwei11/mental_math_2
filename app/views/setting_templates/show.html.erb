@@ -13,17 +13,21 @@
 
       <!-- Edit link setting start -->
       <div class="col">
-        <a href="/settings/<%= @setting.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit setting
-        </a>
+        <% if current_user == @setting.owner %>
+          <a href="/settings/<%= @setting.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit setting
+          </a>
+        <% end %>
       </div>
       <!-- Edit link setting end -->
 
       <!-- Delete link setting start -->
       <div class="col">
-        <a href="/delete_setting/<%= @setting.id %>" class="btn btn-block btn-outline-secondary">
-          Delete setting
-        </a>
+        <% if current_user == @setting.owner %>
+          <a href="/delete_setting/<%= @setting.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete setting
+          </a>
+        <% end %>
       </div>
       <!-- Delete link setting end -->
     </div>
