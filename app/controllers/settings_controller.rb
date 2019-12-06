@@ -6,6 +6,7 @@ class SettingsController < ApplicationController
   end
 
   def show
+    @score = Score.new
     @setting = Setting.find(params.fetch("id_to_display"))
 
     render("setting_templates/show.html.erb")
