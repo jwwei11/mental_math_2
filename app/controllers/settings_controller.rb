@@ -10,7 +10,7 @@ class SettingsController < ApplicationController
   end
 
   def index
-    @settings = Setting.all
+    @settings = current_user.settings.page(params[:page]).per(10)
 
     render("setting_templates/index.html.erb")
   end
