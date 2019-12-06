@@ -78,7 +78,11 @@
 
         <!-- Display setting.owner_id start -->
         <td>
-          <%= setting.owner.email %>
+          <% if setting.owner.present? %>
+            <a href="/users/<%= setting.owner.id %>">
+              <%= setting.owner.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display setting.owner_id end -->
 

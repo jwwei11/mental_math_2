@@ -61,7 +61,11 @@
       </dt>
       <!-- Display setting_id start -->
       <dd>
-        <%= @score.setting_id %>
+        <% if @score.setting.present? %>
+          <a href="/settings/<%= @score.setting_id %>">
+            <%= @score.setting.owner_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display setting_id end -->
 

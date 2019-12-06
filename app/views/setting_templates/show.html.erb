@@ -38,7 +38,11 @@
       </dt>
       <!-- Display owner_id start -->
       <dd>
-        <%= @setting.owner_id %>
+        <% if @setting.owner.present? %>
+          <a href="/users/<%= @setting.owner_id %>">
+            <%= @setting.owner.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display owner_id end -->
 

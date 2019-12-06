@@ -84,7 +84,11 @@
 
         <!-- Display score.setting_id start -->
         <td>
-          <%= score.setting.owner_id %>
+          <% if score.setting.present? %>
+            <a href="/settings/<%= score.setting.id %>">
+              <%= score.setting.owner_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display score.setting_id end -->
 
