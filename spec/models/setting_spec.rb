@@ -4,6 +4,8 @@ RSpec.describe Setting, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:scores) }
+
     it { should belong_to(:owner) }
 
     end
