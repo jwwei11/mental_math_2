@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Settings
+
+    <a data-toggle="collapse" href="#user_settings_new_form">
+      Add setting
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.settings.each do |setting| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/settings/<%= setting.id %>">
+          <%= setting.owner_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

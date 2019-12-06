@@ -63,6 +63,14 @@ class SettingsController < ApplicationController
     end
   end
 
+  def destroy_row_from_owner
+    @setting = Setting.find(params.fetch("id_to_remove"))
+
+    @setting.destroy
+
+    redirect_to("/users/#{@setting.owner_id}", notice: "Setting deleted successfully.")
+  end
+
   def destroy_row
     @setting = Setting.find(params.fetch("id_to_remove"))
 

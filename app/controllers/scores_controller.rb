@@ -57,6 +57,14 @@ class ScoresController < ApplicationController
     end
   end
 
+  def destroy_row_from_setting
+    @score = Score.find(params.fetch("id_to_remove"))
+
+    @score.destroy
+
+    redirect_to("/settings/#{@score.setting_id}", notice: "Score deleted successfully.")
+  end
+
   def destroy_row
     @score = Score.find(params.fetch("id_to_remove"))
 
