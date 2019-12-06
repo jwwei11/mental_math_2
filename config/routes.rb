@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Score resource:
+
+  # CREATE
+  get("/scores/new", { :controller => "scores", :action => "new_form" })
+  post("/create_score", { :controller => "scores", :action => "create_row" })
+
+  # READ
+  get("/scores", { :controller => "scores", :action => "index" })
+  get("/scores/:id_to_display", { :controller => "scores", :action => "show" })
+
+  # UPDATE
+  get("/scores/:prefill_with_id/edit", { :controller => "scores", :action => "edit_form" })
+  post("/update_score/:id_to_modify", { :controller => "scores", :action => "update_row" })
+
+  # DELETE
+  get("/delete_score/:id_to_remove", { :controller => "scores", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Setting resource:
 
   # CREATE

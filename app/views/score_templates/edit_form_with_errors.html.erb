@@ -1,0 +1,77 @@
+<!-- Validation failure messages -->
+<% if @score.errors.any? %>
+  <% @score.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit score #<%= @score.id %>
+</h1>
+
+<hr>
+
+<!-- Form score start -->
+<form action="/update_score/<%= @score.id %>" method="post">
+<!-- Form score end -->
+
+  <!-- Label and input for total_score start -->
+  <div class="form-group">
+    <label for="total_score">
+      Total score
+    </label>
+
+    <!-- Input for total_score start -->
+    <input type="text" id="total_score" name="total_score" class="form-control" value="<%= @score.total_score %>">
+    <!-- Input for total_score end -->
+  </div>
+  <!-- Label and input for total_score end -->
+
+  <!-- Label and input for question_types start -->
+  <div class="form-group">
+    <label for="question_types">
+      Question types
+    </label>
+
+    <!-- Input for question_types start -->
+    <input type="text" id="question_types" name="question_types" class="form-control" value="<%= @score.question_types %>">
+    <!-- Input for question_types end -->
+  </div>
+  <!-- Label and input for question_types end -->
+
+  <!-- Label and input for response_times start -->
+  <div class="form-group">
+    <label for="response_times">
+      Response times
+    </label>
+
+    <!-- Input for response_times start -->
+    <input type="text" id="response_times" name="response_times" class="form-control" value="<%= @score.response_times %>">
+    <!-- Input for response_times end -->
+  </div>
+  <!-- Label and input for response_times end -->
+
+  <!-- Label and input for setting_id start -->
+  <div class="form-group">
+    <label for="setting_id">
+      Setting
+    </label>
+
+    <!-- Input for setting_id start -->
+    <input type="text" id="setting_id" name="setting_id" class="form-control" value="<%= @score.setting_id %>">
+    <!-- Input for setting_id end -->
+  </div>
+  <!-- Label and input for setting_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update score
+  </button>
+</form>
+
+<hr>
+
+<a href="/scores">
+  Go back
+</a>
