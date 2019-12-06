@@ -60,7 +60,7 @@
     </label>
 
     <!-- Input for setting_id start -->
-    <input type="text" id="setting_id" name="setting_id" class="form-control" value="<%= @score.setting_id %>">
+    <%= select_tag(:setting_id, options_from_collection_for_select(Setting.all, :id, :owner_id, @score.setting_id), :class => "form-control") %>
     <!-- Input for setting_id end -->
   </div>
   <!-- Label and input for setting_id end -->
