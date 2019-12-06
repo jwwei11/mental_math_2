@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @setting.scores.each do |score| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/scores/<%= score.id %>">
           <%= score.created_at %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_score_from_setting/<%= score.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="setting_scores_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "setting_templates/setting_scores_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

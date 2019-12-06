@@ -11,55 +11,44 @@
         </a>
       </div>
 
-      <!-- Edit link score start -->
       <div class="col">
         <a href="/scores/<%= @score.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit score
         </a>
       </div>
-      <!-- Edit link score end -->
 
-      <!-- Delete link score start -->
       <div class="col">
         <a href="/delete_score/<%= @score.id %>" class="btn btn-block btn-outline-secondary">
           Delete score
         </a>
       </div>
-      <!-- Delete link score end -->
     </div>
 
     <dl>
       <dt>
         Total score
       </dt>
-      <!-- Display total_score start -->
       <dd>
         <%= @score.total_score %>
       </dd>
-      <!-- Display total_score end -->
 
       <dt>
         Question types
       </dt>
-      <!-- Display question_types start -->
       <dd>
         <%= @score.question_types %>
       </dd>
-      <!-- Display question_types end -->
 
       <dt>
         Response times
       </dt>
-      <!-- Display response_times start -->
       <dd>
         <%= @score.response_times %>
       </dd>
-      <!-- Display response_times end -->
 
       <dt>
         Setting
       </dt>
-      <!-- Display setting_id start -->
       <dd>
         <% if @score.setting.present? %>
           <a href="/settings/<%= @score.setting_id %>">
@@ -67,28 +56,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display setting_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@score.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@score.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

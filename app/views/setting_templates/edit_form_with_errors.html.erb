@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @setting.errors.any? %>
   <% @setting.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,76 +12,52 @@
 
 <hr>
 
-<!-- Form setting start -->
 <form action="/update_setting/<%= @setting.id %>" method="post">
-<!-- Form setting end -->
 
-  <!-- Label and input for owner_id start -->
-  <!-- Label and input for owner_id end -->
 
-  <!-- Label and input for upper_digit_limit start -->
   <div class="form-group">
     <label for="upper_digit_limit">
       Upper digit limit
     </label>
 
-    <!-- Input for upper_digit_limit start -->
     <input type="text" id="upper_digit_limit" name="upper_digit_limit" class="form-control" value="<%= @setting.upper_digit_limit %>">
-    <!-- Input for upper_digit_limit end -->
   </div>
-  <!-- Label and input for upper_digit_limit end -->
 
-  <!-- Label and input for lower_digit_limit start -->
   <div class="form-group">
     <label for="lower_digit_limit">
       Lower digit limit
     </label>
 
-    <!-- Input for lower_digit_limit start -->
     <input type="text" id="lower_digit_limit" name="lower_digit_limit" class="form-control" value="<%= @setting.lower_digit_limit %>">
-    <!-- Input for lower_digit_limit end -->
   </div>
-  <!-- Label and input for lower_digit_limit end -->
 
-  <!-- Label and input for multiplication start -->
   <div class="form-check">
     <input type="hidden" value="0" name="multiplication">
-    <!-- Input for multiplication start -->
     <input id="multiplication" class="form-check-input" name="multiplication" type="checkbox" value="1" <%= "checked" if @setting.multiplication %>>
-    <!-- Input for multiplication end -->
     <label for="multiplication" class="form-check-label">
       Multiplication
     </label>
   </div>
 
-  <!-- Label and input for addition start -->
   <div class="form-check">
     <input type="hidden" value="0" name="addition">
-    <!-- Input for addition start -->
     <input id="addition" class="form-check-input" name="addition" type="checkbox" value="1" <%= "checked" if @setting.addition %>>
-    <!-- Input for addition end -->
     <label for="addition" class="form-check-label">
       Addition
     </label>
   </div>
 
-  <!-- Label and input for division start -->
   <div class="form-check">
     <input type="hidden" value="0" name="division">
-    <!-- Input for division start -->
     <input id="division" class="form-check-input" name="division" type="checkbox" value="1" <%= "checked" if @setting.division %>>
-    <!-- Input for division end -->
     <label for="division" class="form-check-label">
       Division
     </label>
   </div>
 
-  <!-- Label and input for subtraction start -->
   <div class="form-check">
     <input type="hidden" value="0" name="subtraction">
-    <!-- Input for subtraction start -->
     <input id="subtraction" class="form-check-input" name="subtraction" type="checkbox" value="1" <%= "checked" if @setting.subtraction %>>
-    <!-- Input for subtraction end -->
     <label for="subtraction" class="form-check-label">
       Subtraction
     </label>
