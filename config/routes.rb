@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "settings#index"
   # Routes for the Score resource:
 
   # CREATE
