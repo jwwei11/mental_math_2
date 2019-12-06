@@ -1,4 +1,6 @@
 ActiveAdmin.register Setting do
+
+ permit_params :owner_id, :upper_digit_limit, :lower_digit_limit, :multiplication, :addition, :division, :subtraction
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
